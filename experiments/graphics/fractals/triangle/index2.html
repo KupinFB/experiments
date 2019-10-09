@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // создаем объект Канвас
+        var myCanvas = document.createElement('canvas'); // создаем и присваеваем объект канваса в переменную myCanvas
+
+        // Задаем свойства канваса
+        myCanvas.id = "field"; // идентификатор
+        myCanvas.width = 800; // Ширина канваса (колво точек на холсте)
+        myCanvas.height = 800; // Высота канваса (колво точек на холсте)
+        myCanvas.style.border   = "1px solid #000000"; // Задаем CSS стиль канваса (обводка, 1 пиксель, однотонная, черная)
+
+        // добавляем канвас в DOM документа, а именно в тег <body>
+        document.getElementsByTagName('body')[0].appendChild( myCanvas );
+
+        // Для рисования нам нужно получить "2D контекст" нашего канваса 
+        // (контекстом является объект имеющий методы для рисования на канвасе) 
+        var ctx = myCanvas.getContext("2d"); // получаем и присваеваем объект контекста в переменную ctx
+
+
+        // ВСё!!!!!!
+        // Мы можем рисовать !!!!
+
+
+        // ----=== Рисуем квардат (заливаем пиксели цветом) ====--- 
+
+        // задаем цвет заливки строкой (предопределенного формата)
+        // "rgba(255, 0, 0, 0.2)" или "rgb(255, 0, 0)"
+        //    - red: [от 0 до 255 (целое)]
+        //    - green: [от 0 до 255 (целое)]
+        //    - blue: [от 0 до 255 (целое)]
+        //    - alpha: [от 0 до 1 (дробно)] ) 
+        ctx.fillStyle = "rgba(255, 0, 0, 0.2)"; 
+        // заливаем цветом прямоугольник пикселей (x, y, width, height)
+        ctx.fillRect(100, 100, 200, 200); 
+
+        // ----=== Рисуем 1 черный пиксель используя заливку квадратом ====--- 
+        ctx.fillStyle = "rgb(0, 0, 0)"; 
+        ctx.fillRect(140, 140, 1, 1); 
+        
+        // ----=== Рисуем 1 черный квадратик 2х2 ====--- 
+        ctx.fillStyle = "rgb(0, 0, 0)"; 
+        ctx.fillRect(150, 140, 2, 2); 
+
+    </script>
+</body>
+</html>
